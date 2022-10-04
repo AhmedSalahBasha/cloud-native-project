@@ -1,0 +1,11 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3111
+ * Running on http://192.168.178.44:3111
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Successfully connected to the database!
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2022 17:01:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2022 17:01:37] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:root:About page is retrieved!
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2022 17:01:42] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2022 17:01:42] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -

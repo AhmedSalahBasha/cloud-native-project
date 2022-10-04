@@ -1,0 +1,53 @@
+
+## Docker commands used to build the application 
+docker build -t cloudnative:techtrends -f Dockerfile .
+
+## Docker commands used to run the application
+docker run -d -p 7111:3111 cloudnative:techtrends
+
+## Docker commands used to get the application logs
+docker container logs epic_gates
+
+## Logs from the container running the TechTrends application
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2022-10-04 17:00:57,696 MainProcess WARNING werkzeug  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-10-04 17:00:57,696 MainProcess INFO werkzeug  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+2022-10-04 17:01:03,744 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:01:03,756 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:03] "GET / HTTP/1.1" 200 -
+2022-10-04 17:01:12,965 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:01:12,968 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:12] "GET / HTTP/1.1" 200 -
+2022-10-04 17:01:13,047 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:13] "GET /static/css/main.css HTTP/1.1" 200 -
+2022-10-04 17:01:13,394 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:13] "GET /favicon.ico HTTP/1.1" 404 -
+2022-10-04 17:01:23,575 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:01:23,576 MainProcess INFO __main__ Post ID 1 is retrieved!
+2022-10-04 17:01:23,576 MainProcess INFO __main__ Post 2020 CNCF Annual Report was found in the database
+2022-10-04 17:01:23,579 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:23] "GET /1 HTTP/1.1" 200 -
+2022-10-04 17:01:23,622 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:23] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-10-04 17:01:31,348 MainProcess INFO __main__ About page is retrieved!
+2022-10-04 17:01:31,351 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:31] "GET /about HTTP/1.1" 200 -
+2022-10-04 17:01:31,393 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:31] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-10-04 17:01:40,232 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:01:40,233 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:40] "GET /metrics HTTP/1.1" 200 -
+2022-10-04 17:01:49,831 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:49] "GET /healthy HTTP/1.1" 200 -
+2022-10-04 17:01:54,701 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:54] "GET /create HTTP/1.1" 200 -
+2022-10-04 17:01:54,748 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:01:54] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-10-04 17:02:17,520 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:02:17,526 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:17] "POST /create HTTP/1.1" 302 -
+2022-10-04 17:02:17,533 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:02:17,535 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:17] "GET / HTTP/1.1" 200 -
+2022-10-04 17:02:17,574 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-10-04 17:02:22,145 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:02:22,146 MainProcess INFO __main__ Post ID 7 is retrieved!
+2022-10-04 17:02:22,146 MainProcess INFO __main__ Post New Post was found in the database
+2022-10-04 17:02:22,147 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:22] "GET /7 HTTP/1.1" 200 -
+2022-10-04 17:02:22,183 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:22] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-10-04 17:02:29,641 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:02:29,641 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:29] "GET /metrics HTTP/1.1" 200 -
+2022-10-04 17:02:32,855 MainProcess INFO __main__ Successfully connected to the database!
+2022-10-04 17:02:32,857 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:32] "GET / HTTP/1.1" 200 -
+2022-10-04 17:02:32,899 MainProcess INFO werkzeug 172.17.0.1 - - [04/Oct/2022 17:02:32] "GET /static/css/main.css HTTP/1.1" 304 -
