@@ -21,6 +21,9 @@ Vagrant.configure("2") do |config|
   # Set the static IP for the vagrant box
   config.vm.network "private_network", ip: "192.168.50.4"
   
+  # Set the sync directory
+  config.vm.synced_folder "/Users/abasha/Desktop/Udacity Data Engineering For AI Applications Nanodegree/Project 6 - Cloud Native", "/home/vagrant"
+
   # Configure the parameters for VirtualBox provider
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "4096"
