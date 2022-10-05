@@ -41,4 +41,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: cloudnative/techtrends:latest
+          tags: abasha93/techtrends:latest, abasha93/techtrends:${{ github.run_number }}
