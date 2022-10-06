@@ -3,6 +3,7 @@ import sqlite3
 import logging
 import sys
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
+from itsdangerous import exc
 from werkzeug.exceptions import abort
 
 # logger configuration
@@ -91,12 +92,23 @@ def create():
 # Check the health of the application
 @app.route('/healthy')
 def status():
-    response = app.response_class( 
-            response=json.dumps({"result":"OK - healthy"}), 
-            status=200, 
-            mimetype='application/json' 
-    )
-    return response
+    try:
+        conn = get_db_connection()
+        response = app.response_class( 
+                response=json.dumps({"result":"OK - healthy"}), 
+                status=200, 
+                mimetype='application/json' 
+        )
+        return response
+    except Exception as err:
+        response = app.response_class( 
+                response=json.dumps({"result":"No - Not healthy"}), 
+                status=200, 
+                mimetype='application/json' 
+        )
+        logger.error("Error {0} while connecting to the database".format(err))
+        return response
+    
 
 # Display some metrics
 @app.route('/metrics')
