@@ -1,21 +1,32 @@
 from cmath import log
 import sqlite3
 import logging
+import sys
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
+# logger configuration
+stderr_handler = logging.StreamHandler(sys.stderr)
+stdout_handler = logging.StreamHandler(sys.stdout)
+handlers = [stderr_handler, stdout_handler]
 logging.basicConfig(
     format="%(asctime)s %(processName)s %(levelname)s %(name)s %(message)s",
     level=logging.DEBUG,
+    handlers=handlers
 )
 logger = logging.getLogger(__name__)
+
+# global variable for counting db connections
+db_connection_count = 0
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
+    global db_connection_count
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     logger.info("Successfully connected to the database!")
+    db_connection_count += 1
     return connection
 
 # Function to get a post using its ID
@@ -95,7 +106,7 @@ def metrics():
     post_count = cursor.execute("SELECT COUNT(*) FROM posts;").fetchone()[0]
     # conn_count = cursor.execute("lsof database.sql;").rowcount
     response = app.response_class( 
-            response=json.dumps({"db_connection_count":1, "post_count":post_count}), 
+            response=json.dumps({"db_connection_count":db_connection_count, "post_count":post_count}), 
             status=200, 
             mimetype='application/json' 
     ) 
