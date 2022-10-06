@@ -24,4 +24,4 @@ spec:
     app: techtrends
     tag: latest
   ## Define the Service type, here set to ClusterIP.
-  type: {{ .Values.service.type }}
+  type: ClusterIP
