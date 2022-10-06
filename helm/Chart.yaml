@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends 
+description: Techtrends project - CloudNative section - Data Engineering Nanodegree - Udacity
+keywords:
+- techtrends
+version: 1.0.0
+maintainers:
+- name: Ahmed.Basha 
+  email: a.salah.b@gmail.com
